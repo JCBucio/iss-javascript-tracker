@@ -85,4 +85,4 @@ async function getAstros() {
 
 getISS();
 getAstros();
-setInterval(getISS, 5000);
+setInterval(getISS, 3000);
