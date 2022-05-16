@@ -13,25 +13,9 @@ const issIcon = L.icon({
 });
 const marker = L.marker([0, 0], {icon: issIcon}).addTo(mymap);
 
-// const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
-const iss_url = 'http://api.open-notify.org/iss-now.json';
+const iss_url = 'https://iss-api.herokuapp.com/iss-location';
 
 let firstTime = true;
-/*
-async function getIss() {
-    const response = await fetch(iss_url);
-    const data = await response.json();
-    const { latitude, longitude } = data;
-
-    marker.setLatLng([latitude, longitude]);
-    if (firstTime) {
-        mymap.setView([latitude, longitude], 3);
-        firstTime = false;
-    };
-    document.getElementById('lat').textContent = latitude.toFixed(3);
-    document.getElementById('lon').textContent = longitude.toFixed(3);
-}
-*/
 
 async function getISS() {
     const response = await fetch(iss_url);
@@ -48,7 +32,7 @@ async function getISS() {
     document.getElementById('lon').textContent = longitude;            
 };
 
-const astros_url = 'http://api.open-notify.org/astros.json';
+const astros_url = 'https://iss-api.herokuapp.com/astronauts';
 async function getAstros() {
     const response = await fetch(astros_url);
     const astros = await response.json();
