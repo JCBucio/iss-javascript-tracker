@@ -13,7 +13,7 @@ const issIcon = L.icon({
 });
 const marker = L.marker([0, 0], {icon: issIcon}).addTo(mymap);
 
-const iss_url = 'https://iss-api.herokuapp.com/iss-location';
+const iss_url = 'https://iss-api.onrender.com/iss-location';
 
 let firstTime = true;
 
@@ -32,7 +32,7 @@ async function getISS() {
     document.getElementById('lon').textContent = longitude;            
 };
 
-const astros_url = 'https://iss-api.herokuapp.com/astronauts';
+const astros_url = 'https://iss-api.onrender.com/astronauts';
 async function getAstros() {
     const response = await fetch(astros_url);
     const astros = await response.json();
